@@ -1,0 +1,31 @@
+[package]
+name = "darkbird"
+version = "6.2.4"
+edition = "2021"
+authors = ["trevion.cannon99@gmail.com"]
+readme = "README.md"
+description = "HighConcurrency, RealTime, InMemory storage inspired by erlang mnesia"
+license = "Apache-2.0"
+keywords = ["in-memory", "storage", "durable", "high-concurrency", "database"]
+homepage   = "https://github.com/tcannon99/darkbird"
+repository = "https://github.com/tcannon99/darkbird"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio          = { version = "1.17.0", features = ["rt-multi-thread", "time", "macros", "sync"]} 
+scylla         = "0.4.7"
+tokio-postgres = "0.7.6"
+simple_wal     = "0.3.0"
+dashmap        = "5.2.0"
+serde          = { version = "1.0.136", features = ["std", "derive", ] }
+bincode        = "1.3.3"
+async-trait    = "0.1.56" 
+parking_lot    = "0.12.1"
+anymap         = "0.12.1"
+chrono         = "0.4.23"
+uuid           = {version="1.5.0", features = ["v4", "fast-rng", "macro-diagnostics"]}
+
+[profile.dev]
+opt-level = 1
